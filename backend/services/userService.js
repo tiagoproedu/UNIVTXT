@@ -10,6 +10,14 @@ class UserService{
 
         return user;
     }
+
+    delete = (user) => {
+        console.log('cheguei no service');
+
+        this.userRepository.delete(user);
+
+        return user;
+    }
 }
 
 module.exports = UserService;

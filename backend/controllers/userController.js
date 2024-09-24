@@ -12,6 +12,16 @@ class UserController {
 
         return res.status(200).json(usuario);
     }
+
+    delete = (req, res) => {
+        const usuario = req.body;
+
+        console.log('cheguei no controller');
+
+        this.userService.delete(usuario);
+
+        return res.status(200).json(usuario);
+    }
 }
 
 module.exports = UserController;

@@ -12,5 +12,6 @@ const userController = new UserController(userService);
 console.log("cheguei no router")
 
 userRoutes.post("/", userController.create);
+userRoutes.delete("/", userController.delete);
 
 module.exports = userRoutes;
