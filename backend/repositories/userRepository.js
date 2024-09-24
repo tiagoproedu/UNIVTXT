@@ -2,15 +2,6 @@ const sql = require('mssql');
 const config = require('../bd/config');
 
 class UserRepository {
-    /*async connect(){
-        try{
-            const connect = await sql.connect(config);
-        }
-        catch(err){
-            console.error('Error ao iniciar o servidor: ', err);
-            throw err;
-        }
-    }*/
    async create(user) {
         const pool = await sql.connect(config);
         try {
@@ -58,3 +49,13 @@ class UserRepository {
 }
 
 module.exports = UserRepository;
+
+/*async connect(){
+        try{
+            const connect = await sql.connect(config);
+        }
+        catch(err){
+            console.error('Error ao iniciar o servidor: ', err);
+            throw err;
+        }
+    }*/

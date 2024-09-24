@@ -1,5 +1,6 @@
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
+const publiRoutes = require('./routes/publiRoutes');
 const app = express();
 
 app.use(express.json());
@@ -13,3 +14,4 @@ app.get('/', (req, res) => {
 })
 
 app.use("/users", userRoutes);
+app.use("/publi", publiRoutes);
