@@ -12,6 +12,16 @@ class PubliController {
 
         return res.status(200).json(publicacao);
     }
+
+    delete = (req, res) => {
+        console.log('cheguei no controller');
+
+        const publicacao = req.body;
+
+        this.publiService.delete(publicacao);
+
+        return res.status(200).json(publicacao);
+    }
 }
 
 module.exports = PubliController;

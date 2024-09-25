@@ -10,6 +10,14 @@ class PubliService{
 
         return publi;
     }
+
+    delete = (publi) => {
+        console.log('cheguei no service');
+
+        this.publiRepository.delete(publi);
+
+        return publi;
+    }
 }
 
 module.exports = PubliService;

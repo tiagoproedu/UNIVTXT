@@ -24,6 +24,26 @@ class PubliRepository {
             }
         }
     }
+    async delete(publi) {
+        const pool = await sql.connect(config);
+        try{
+            const request = pool.request();
+            await request
+                .input('id', sql.Int, publi.id)
+                .query('DELETE FROM publicacoes WHERE id=@id');
+            console.log('Publicação deletada com sucesso!');
+        } catch (err){
+            console.error('Erro ao deletar publicação: ', err);
+            throw err;
+        } finally {
+            try {
+                console.log('Operação finalizada!');
+                await pool.close();
+            } catch (err){
+                console.error('Erro ao fechar a conexão: ', err);
+            }
+        }
+    }
 }
 
 module.exports = PubliRepository;

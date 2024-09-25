@@ -12,5 +12,6 @@ const publiController = new PubliController(publiService);
 console.log('Estou no router');
 
 publiRoutes.post("/", publiController.create);
+publiRoutes.delete("/", publiController.delete);
 
 module.exports = publiRoutes;
